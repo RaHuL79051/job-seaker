@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/b5b6622958.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../CSS/signUP.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <div class="welcomeHeading">
+      <h1>Welcome to Job Finder</h1>
+    </div>
+    <div class="Maincontainer">
+      <div class="BigContainer Employee" id="1">
+        <i class="fa-solid fa-user-tie Employee"></i>
+        <h1 class="Employee">Register as an Employee.</h1>
+      </div>
+      <div class="BigContainer Company" id="2">
+        <i class="fa-solid fa-building Company"></i>
+        <h1 class="Company">Register as an Company.</h1>
+      </div>
+    </div>
+
+    <div class="EmployeeLogin" style="display: none">
+      <!-- Employee Registration Form Section -->
+      <section class="employee-register">
+        <div class="back-button-container">
+          <button class="back-button" onclick="refreshPage()">
+            <i class="fas fa-arrow-left"></i> Back
+          </button>
+        </div>
+        <div class="container">
+          <h2 class="text-center">Register as a Job Seeker</h2>
+          <form
+            action="../PHP/employeeLogin.php"
+            method="post"
+            class="form-container"
+          >
+            <!-- Full Name -->
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter your phone number"
+                pattern="[0-9]{10}"
+                required
+              />
+              <small>Please enter a valid 10-digit phone number.</small>
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="form-group">
+              <label for="dob">Date of Birth</label>
+              <input type="date" id="dob" name="dob" required />
+            </div>
+
+            <!-- Address -->
+            <div class="form-group">
+              <label for="address">Address</label>
+              <textarea
+                id="address"
+                name="address"
+                rows="3"
+                placeholder="Enter your full address"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+              <label>Gender</label>
+              <div class="form-radio">
+                <label for="male">Male</label>
+                <input
+                  type="radio"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  required
+                />
+              </div>
+              <div class="form-radio">
+                <label for="female">Female</label>
+                <input
+                  type="radio"
+                  id="female"
+                  name="gender"
+                  value="female"
+                  required
+                />
+              </div>
+              <div class="form-radio">
+                <label for="other">Other</label>
+                <input
+                  type="radio"
+                  id="other"
+                  name="gender"
+                  value="other"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Experience -->
+            <div class="form-group">
+              <label for="experience">Previous Job Experience</label>
+              <textarea
+                id="experience"
+                name="experience"
+                rows="3"
+                placeholder="Describe your previous experience, if any"
+              ></textarea>
+            </div>
+
+            <!-- Educational Qualification -->
+            <div class="form-group">
+              <label for="qualification">Educational Qualification</label>
+              <select id="qualification" name="qualification" required>
+                <option value="" selected>Select your qualification</option>
+                <option value="highschool">High School</option>
+                <option value="diploma">Diploma</option>
+                <option value="bachelor">Bachelor’s Degree</option>
+                <option value="master">Master’s Degree</option>
+              </select>
+            </div>
+
+            <!-- Skills (Multi-Select Dropdown) -->
+            <div class="form-group">
+              <label for="skills">Skills</label>
+              <select multiple id="skills" name="skills[]" required>
+                <option value="tally">Tally</option>
+                <option value="communication">Communication Skills</option>
+                <option value="data-entry">Data Entry</option>
+                <option value="customer-service">Customer Service</option>
+              </select>
+              <small
+                >Hold down the Ctrl (Windows) or Command (Mac) button to select
+                multiple options.</small
+              >
+            </div>
+
+            <!-- Preferred Location -->
+            <div class="form-group">
+              <label for="location">Preferred Job Location</label>
+              <select id="location" name="location" required>
+                <option value="" selected>Select a location</option>
+                <option value="city1">Lucknow</option>
+                <option value="city2">Delhi</option>
+                <option value="city3">Noida</option>
+                <option value="city4">Chandigarh</option>
+              </select>
+            </div>
+
+            <!-- Resume Upload -->
+            <div class="form-group">
+              <label for="resume">Upload Resume (PDF/DOC)</label>
+              <input
+                type="file"
+                id="resume"
+                name="resume"
+                accept=".pdf, .doc, .docx"
+                required
+              />
+            </div>
+
+            <!-- Agreement Checkbox -->
+            <div class="form-group agreement">
+              <label for="agreement"
+                >I agree to the <a href="#">terms and conditions</a></label
+              >
+              <input type="checkbox" id="agreement" name="agreement" required />
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Send for Verification</button>
+          </form>
+          <p style="text-align: center; margin-top: 20px">
+            Already a user? <a href="./signIn.html">click here</a>
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <div class="CompanyLogin" style="display: none">
+      <!-- Company Registration Form Section -->
+      <section class="company-register">
+        <div class="back-button-container">
+          <button class="back-button" onclick="refreshPage()">
+            <i class="fas fa-arrow-left"></i> Back
+          </button>
+        </div>
+        <div class="container">
+          <h2>Register Your Company</h2>
+          <form
+            action="../PHP/companyLogin.php"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <!-- Company Name -->
+            <div class="form-group">
+              <label for="companyName">Company Name</label>
+              <input
+                type="text"
+                id="companyName"
+                name="companyName"
+                placeholder="Enter your company name"
+                required
+              />
+            </div>
+
+            <!-- Company Email -->
+            <div class="form-group">
+              <label for="companyEmail">Company Email</label>
+              <input
+                type="email"
+                id="companyEmail"
+                name="companyEmail"
+                placeholder="Enter your company email"
+                required
+              />
+            </div>
+
+            <!-- Contact Person Name -->
+            <div class="form-group">
+              <label for="contactPerson">Contact Person Name</label>
+              <input
+                type="text"
+                id="contactPerson"
+                name="contactPerson"
+                placeholder="Enter the name of the contact person"
+                required
+              />
+            </div>
+
+            <!-- Contact Number -->
+            <div class="form-group">
+              <label for="contactPhone">Contact Number</label>
+              <input
+                type="tel"
+                id="contactPhone"
+                name="contactPhone"
+                placeholder="Enter a contact number"
+                pattern="[0-9]{10}"
+                required
+              />
+              <small>Please enter a valid 10-digit phone number.</small>
+            </div>
+
+            <!-- Company Address -->
+            <div class="form-group">
+              <label for="companyAddress">Company Address</label>
+              <textarea
+                id="companyAddress"
+                name="companyAddress"
+                rows="3"
+                placeholder="Enter your full company address"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Website URL -->
+            <div class="form-group">
+              <label for="companyWebsite">Company Website</label>
+              <input
+                type="url"
+                id="companyWebsite"
+                name="companyWebsite"
+                placeholder="Enter your company website URL"
+              />
+            </div>
+
+            <!-- Industry Type -->
+            <div class="form-group">
+              <label for="industryType">Industry Type</label>
+              <select id="industryType" name="industryType" required>
+                <option value="" selected>Select your industry type</option>
+                <option value="Tally">Tally Caller</option>
+                <option value="IT">IT Services</option>
+                <option value="Finance">Finance</option>
+                <option value="Customer Service">Customer Service</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <!-- Company Description -->
+            <div class="form-group">
+              <label for="companyDescription">Company Description</label>
+              <textarea
+                id="companyDescription"
+                name="companyDescription"
+                rows="4"
+                placeholder="Provide a brief description of your company"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Job Categories -->
+            <div class="form-group">
+              <label for="jobCategories">Job Categories</label>
+              <select
+                multiple
+                id="jobCategories"
+                name="jobCategories[]"
+                required
+              >
+                <option value="Tally">Tally Caller</option>
+                <option value="Customer Service">Customer Service</option>
+                <option value="Data Entry">Data Entry</option>
+                <option value="Sales">Sales</option>
+                <option value="Marketing">Marketing</option>
+              </select>
+              <small
+                >Hold down the Ctrl (Windows) or Command (Mac) button to select
+                multiple options.</small
+              >
+            </div>
+
+            <!-- Job Location -->
+            <div class="form-group">
+              <label for="jobLocation">Job Location</label>
+              <input
+                type="text"
+                id="jobLocation"
+                name="jobLocation"
+                placeholder="Enter the location where jobs will be offered"
+                required
+              />
+            </div>
+
+            <!-- Upload Company Logo -->
+            <div class="form-group">
+              <label for="companyLogo">Upload Company Logo</label>
+              <input
+                type="file"
+                id="companyLogo"
+                name="companyLogo"
+                accept=".png, .jpg, .jpeg"
+                required
+              />
+            </div>
+
+            <!-- Agreement Checkbox -->
+            <div class="form-group agreement">
+              <label for="agreement"
+                >I agree to the <a href="#">terms and conditions</a></label
+              >
+              <input type="checkbox" id="agreement" name="agreement" required />
+            </div>
+            <!-- Submit Button -->
+            <button type="submit">Apply for Verification</button>
+          </form>
+          <p style="text-align: center; margin-top: 20px">
+            Already a Registered Company? <a href="./signIn.html">click here</a>
+          </p>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="../JS/signUP.js"></script>
+</html>

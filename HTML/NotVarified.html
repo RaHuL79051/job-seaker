@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Not Verified</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Link to your CSS file if needed -->
+    <style>
+      /* Full-page styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        height: 100%;
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #1e3c72; /* Deep blue background */
+        color: #fff;
+        text-align: center;
+      }
+
+      .container {
+        background: rgba(
+          0,
+          0,
+          0,
+          0.7
+        ); /* Dark overlay for better readability */
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+        max-width: 500px;
+        margin: 20px;
+      }
+
+      h1 {
+        margin-bottom: 1rem;
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+        font-size: 16px;
+      }
+
+      .button-container {
+        margin-top: 1rem;
+      }
+
+      .button-container a {
+        display: inline-block;
+        padding: 12px 20px;
+        color: #fff;
+        background: #00bcd4;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s ease;
+      }
+
+      .button-container a:hover {
+        background: #0097a7;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Account Not Verified</h1>
+      <p>
+        Your account has not been verified yet. Please come back after some time
+        or refresh the page to try again.
+      </p>
+      <div class="button-container">
+        <a href="javascript:location.reload();">Refresh Page</a>
+      </div>
+    </div>
+  </body>
+</html>
